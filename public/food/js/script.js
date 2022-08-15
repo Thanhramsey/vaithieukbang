@@ -467,7 +467,7 @@ $(".counter").appear(function () {
 
         responsive: {
             992: {
-                items: 1,
+                items: 3,
             },
             991: {
                 items: 1,

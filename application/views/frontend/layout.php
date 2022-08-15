@@ -11,7 +11,7 @@
      <!-- keywords -->
      <meta name="keywords" content="Creative, modern, clean, bootstrap responsive, html5, css3, portfolio, blog, studio, templates, multipurpose, one page, corporate, start-up, studio, branding, designer, freelancer, carousel, parallax, photography, studio, masonry, grid, faq">
      <!-- Page Title -->
-     <title>Vải thiều Kbang</title>
+     <title>Vải U Hồng Kbang</title>
 
     <!-- Favicon -->
     <link rel="icon" href="<?php echo base_url() ?>/public/food/img/favicon.ico">
@@ -186,7 +186,7 @@
                          data-paddingbottom="[0,0,0,0]"
                          data-paddingleft="[0,0,0,0]"
 
-                         style="z-index: 5; white-space: nowrap; font-size: 48px; line-height: 70px; font-weight: 400; color: #444444; letter-spacing: 0px;font-family:Playfair Display;">Hợp Tác Xã Kbang</div>
+                         style="z-index: 5; white-space: nowrap; font-size: 48px; line-height: 70px; font-weight: 400; color: #444444; letter-spacing: 0px;font-family:Playfair Display;">Hợp Tác Xã Tiên Phong Kbang</div>
 
                     <!-- LAYER NR. 2 -->
                     <div class="tp-caption   tp-resizeme rs-parallaxlevel-1"
@@ -692,13 +692,16 @@
 									<!--Deal Item-->
 									<div class="mega-deal-item">
 										<!--Deal Img-->
-										<div class="deal-img">
-											<img src="<?php echo base_url() ?>/public/images/posts/<?php echo $row['img'] ?>" alt="image">
+										<div class="deal-img" style="height:300px">
+											<img style="height:100%;border-radius:20px" src="<?php echo base_url() ?>/public/images/posts/<?php echo $row['img'] ?>" alt="image">
 										</div>
 									</div>
 									<!--Deal Text-->
-									<p class="deal-text feature-para text-left mt-40 mb-20"><?php echo $row['title'] ?></p>
+									<a  href="tin-tuc/<?php echo $row['alias']; ?>" title=""><p class="deal-text feature-para text-left mt-40 mb-20"><?php echo $row['title'] ?></p></a>
+									<!-- <p class="deal-text feature-para text-left mt-40 mb-20"><?php echo $row['title'] ?></p> -->
 									<p class="text-left deal-para"><?php echo $row['created'] ?></p>
+
+
 									<!--Deal Price-->
 									<!-- <div>
 										<div class="text-gradient price2 text-left"><span class="text-gradient">$</span>99</div>
