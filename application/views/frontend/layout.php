@@ -11,7 +11,7 @@
      <!-- keywords -->
      <meta name="keywords" content="Creative, modern, clean, bootstrap responsive, html5, css3, portfolio, blog, studio, templates, multipurpose, one page, corporate, start-up, studio, branding, designer, freelancer, carousel, parallax, photography, studio, masonry, grid, faq">
      <!-- Page Title -->
-     <title>Vải U Hồng Kbang</title>
+     <title>Hợp tác xã Tiên Phong Kbang</title>
 
     <!-- Favicon -->
     <link rel="icon" href="<?php echo base_url() ?>/public/food/img/favicon.ico">
@@ -91,10 +91,10 @@
             </div>
             <div class="social_icons">
                 <ul>
-                    <li><a href="#." class="facebook-bg-hvr"><i class="fab fa-facebook-f" aria-hidden="true"></i></a> </li>
-                    <li><a href="#." class="twitter-bg-hvr"><i class="fab fa-twitter" aria-hidden="true"></i></a> </li>
-                    <li><a href="#." class="linkedin-bg-hvr"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a> </li>
-                    <li><a href="#." class="instagram-bg-hvr"><i class="fab fa-instagram" aria-hidden="true"></i></a> </li>
+                    <li><a href="#." class="facebook-bg-hvr"><i class="lni lni-facebook-filled" aria-hidden="true"></i></a> </li>
+                    <li><a href="#." class="twitter-bg-hvr"><i class="lni lni-twitter-filled" aria-hidden="true"></i></a> </li>
+                    <li><a href="#." class="linkedin-bg-hvr"><i class="lni lni-linkedin" aria-hidden="true"></i></a> </li>
+                    <li><a href="#." class="instagram-bg-hvr"><i class="lni lni-instagram" aria-hidden="true"></i></a> </li>
                 </ul>
             </div>
 
@@ -139,10 +139,10 @@
 
             <div class="side-footer text-white w-100">
                 <ul class="social-icons-simple">
-                    <li class="side-menu-icons"><a href="javascript:void(0)" class="facebook-bg-hvr"><i class="fab fa-facebook-f color-white"></i> </a> </li>
-                    <li class="side-menu-icons"><a href="javascript:void(0)" class="twitter-bg-hvr"><i class="fab fa-twitter color-white"></i> </a> </li>
-                    <li class="side-menu-icons"><a href="javascript:void(0)" class="linkedin-bg-hvr"><i class="fab fa-linkedin-in color-white"></i> </a> </li>
-                    <li class="side-menu-icons"><a href="javascript:void(0)" class="instagram-bg-hvr"><i class="fab fa-instagram color-white"></i> </a> </li>
+                    <li class="side-menu-icons"><a href="javascript:void(0)" class="facebook-bg-hvr"><i class="lni lni-facebook-filled color-white"></i> </a> </li>
+                    <li class="side-menu-icons"><a href="javascript:void(0)" class="twitter-bg-hvr"><i class="lni lni-twitter-filled color-white"></i> </a> </li>
+                    <li class="side-menu-icons"><a href="javascript:void(0)" class="linkedin-bg-hvr"><i class="lni lni-linkedin color-white"></i> </a> </li>
+                    <li class="side-menu-icons"><a href="javascript:void(0)" class="instagram-bg-hvr"><i class="lni lni-instagram color-white"></i> </a> </li>
 
                 </ul>
                 <p class="text-white">&copy; 2022 Vải U Hồng Kbang</p>
@@ -528,7 +528,7 @@
                         </div>
                         </div>
                         <div class="counters">
-                            <h3 class="text-capitalize"><span class="count_nums num-scrolling text-white" data-to="9500" data-speed="2500">30</span><span class="text-white plus-icon">+</span></h3>
+                            <h3 class="text-capitalize"><span class="count_nums num-scrolling text-white" data-to="9500" data-speed="2500">100</span><span class="text-white plus-icon">+</span></h3>
                         </div>
                         <p class="num-counts mt-10 text-white">ha diện tích trồng trọt</p>
                         </div>
@@ -646,7 +646,7 @@
                             <img src="<?php echo base_url() ?>/public/food/img/ziczac.png" alt="image">
                         </div>
                         <h2 class="text-capitalize text-gradient">Sản phẩm</h2>
-						<a class="btn btn-green btn-large btn-rounded scroll" href="#about">Xem thêm</a>
+						<a class="btn btn-green btn-large btn-rounded" href="<?php echo base_url() ?>sanpham">Xem thêm</a>
                     </div>
                 </div>
             </div>
@@ -690,22 +690,16 @@
 							<?php foreach ($tintuc as $row) :?>
 								<div class="item item-deal">
 									<!--Deal Item-->
-									<div class="mega-deal-item">
+									<div class="mega-deal-item mb-3">
 										<!--Deal Img-->
 										<div class="deal-img" style="height:300px">
 											<img style="height:100%;border-radius:20px" src="<?php echo base_url() ?>/public/images/posts/<?php echo $row['img'] ?>" alt="image">
 										</div>
 									</div>
 									<!--Deal Text-->
-									<a  href="tin-tuc/<?php echo $row['alias']; ?>" title=""><p class="deal-text feature-para text-left mt-40 mb-20"><?php echo $row['title'] ?></p></a>
-									<!-- <p class="deal-text feature-para text-left mt-40 mb-20"><?php echo $row['title'] ?></p> -->
+
+									<a style="text-align:left;" href="<?php echo base_url() ?>tin-tuc/<?php echo $row['alias']; ?>"> <strong><h5 ><?php echo $row['title']; ?></h5></strong></a>
 									<p class="text-left deal-para"><?php echo $row['created'] ?></p>
-
-
-									<!--Deal Price-->
-									<!-- <div>
-										<div class="text-gradient price2 text-left"><span class="text-gradient">$</span>99</div>
-									</div> -->
 								</div>
 							<?php endforeach; ?>
                         </div>
@@ -838,7 +832,7 @@
 								<textarea class="form-control" placeholder="Chi tiết" id="description" name="description"></textarea>
                             </div>
                             <div class="col-md-6 text-center text-md-left">
-								<button type="button" onclick="saveLienHe()" class="btn btn-green btn-large btn-rounded d-inline-block contact_btn" id="cf-submit" name="submit"><i class="fa fa-spinner fa-spin mr-2 d-none" aria-hidden="true"></i> Gửi</button>
+								<button type="button" onclick="saveLienHe()" class="btn btn-green btn-large btn-rounded d-inline-block contact_btn_1" id="cf-submit" name="submit"><i class="fa fa-spinner fa-spin mr-2 d-none" aria-hidden="true"></i> Gửi</button>
                             </div>
                         </div>
                     </form>
@@ -875,29 +869,27 @@
                         </div>
                     </div>
                 </div>
-
+				<div class="col-md-4 col-sm-12 justify-content-start d-flex">
+                    <div class="footer-para" style="padding-top:20px">
+                        <div class="contact-social-icon pb-20">
+                            <ul class="social-icons mb-0">
+                                <li><a href="#." class="facebook-bg-hvr"><i class="lni lni-facebook-filled" aria-hidden="true"></i></a> </li>
+                                <li><a href="#." class="twitter-bg-hvr"><i class="lni lni-twitter-filled" aria-hidden="true"></i></a> </li>
+                                <li><a href="#." class="linkedin-bg-hvr"><i class="lni lni-linkedin" aria-hidden="true"></i></a> </li>
+                                <li><a href="#." class="instagram-bg-hvr"><i class="lni lni-instagram" aria-hidden="true"></i></a> </li>
+                            </ul>
+                        </div>
+                        <p class="copyright-para">© 2022 HTX Tiên Phong <a href="javascript:void(0);" class="grey"> KBANG</a></p>
+                    </div>
+                </div>
 				<div class="col-md-4">
 					<div class="contact">
                         <div class="icon-flex">
                        	 <p class="contact-detail mb-3"><i class="fa fa-home contact-icon"></i> 214 Quang Trung, Tổ Dân Phố 7, K'Bang, Gia Lai</p>
                         </div>
                         <p class="contact-detail"><i class="fa fa-clock contact-icon"></i> Thứ 2 - Thứ 7: 9:00am-6:00pm</p>
-                        <p class="contact-detail"><i class="fa fa-envelope-open contact-icon"></i> vaihtxtienphongkbang.com.vn</p>
+                        <p class="contact-detail"><i class="lni lni-postcard contact-icon"></i> vaihtxtienphongkbang.com.vn</p>
                         <p class="contact-detail"><i class="fa fa-phone contact-icon"></i> Phone: 0376695104</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-12 justify-content-end d-flex">
-                    <div class="footer-para" style="padding-top:20px">
-                        <div class="contact-social-icon pb-20">
-                            <ul class="social-icons mb-0">
-                                <li><a href="#." class="facebook-bg-hvr"><i class="fab fa-facebook-f" aria-hidden="true"></i></a> </li>
-                                <li><a href="#." class="twitter-bg-hvr"><i class="fab fa-twitter" aria-hidden="true"></i></a> </li>
-                                <li><a href="#." class="linkedin-bg-hvr"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a> </li>
-                                <li><a href="#." class="instagram-bg-hvr"><i class="fab fa-instagram" aria-hidden="true"></i></a> </li>
-                            </ul>
-                        </div>
-                        <p class="copyright-para">© 2022 HTX Tiên Phong <a href="javascript:void(0);" class="grey"> KBANG</a></p>
                     </div>
                 </div>
             </div>
@@ -906,7 +898,7 @@
     <!--End Footer-->
 
     <!--G0 Top-->
-    <div class="go-top"><i class="fas fa-chevron-up"></i><i class="fas fa-chevron-up"></i></div>
+    <div class="go-top"><i class="lni lni-angle-double-up"></i><i class="lni lni-angle-double-up"></i></div>
     <!--End Go Top-->
 
 </div>
@@ -953,6 +945,7 @@
 			var email = $("#email").val();
 			var phone = $("#phone").val();
 			var description = $("#description").val();
+			$(".contact_btn_1 i").removeClass('d-none');
 			var validate = false;
 			if (name === "" ) {
 				$("#name").focus();
@@ -981,6 +974,7 @@
 						$("#phone").val("");
 						$("#email").val("");
 						$("#description").val("");
+						$(".contact_btn_1 i").addClass('d-none');
 					}
 				});
 			}

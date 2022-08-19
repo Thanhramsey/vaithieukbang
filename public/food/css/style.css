@@ -705,6 +705,22 @@ h6{
     width: 100%;
 }
 
+.pagination li a {
+	display: block;
+    height: 30px;
+    background: #ddd;
+    padding: 3px 10px;
+    border-radius: 5px;
+    color: black;
+	margin-left: 5px;
+}
+
+.pagination li.active a {
+	background-color: #4CAF50;
+	color: white;
+  }
+
+.pagination a:hover:not(.active) {background-color: #ff5757;color:#fff}
 
 
 /*side clode btn*/
@@ -1313,10 +1329,10 @@ li {
     transition: 1s;
 }
 
-.item-img:hover img{
+/* .item-img:hover img{
     transform: scale(1.2);
     transition: 1s;
-}
+} */
 
 .gallery-para{
     font-size: 20px !important;
