@@ -344,6 +344,7 @@
 						$("#email").val("");
 						$("#description").val("");
 						$(".contact_btn_1 i").addClass('d-none');
+						setTimeout(function() { $(".text-success").hide(); }, 3000);
 					}
 				});
 			}
