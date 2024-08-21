@@ -13,6 +13,9 @@ $route['tin-tuc/(:any)'] = 'tintuc/detail';
 $route['sanpham'] = 'tintuc/sanpham';
 $route['sanpham/(:any)'] = 'tintuc/sanpham/$1';
 $route['ttsanpham/(:any)'] = 'tintuc/detailsp';
+$route['gioithieu'] = 'tintuc/gioithieu';
+
+$route['thuvien'] = 'tintuc/thuvien';
 
 
 

@@ -79,9 +79,9 @@ class Lienhe extends CI_Controller {
 
 		$email = $config_data['mail_noreply'];
 
-		$this->email->from($config_data['mail_smtp'], 'Hợp tác xã Tiên Phong');
+		$this->email->from($config_data['mail_smtp'], 'Thiên Định Tuệ ');
 		$this->email->to($email);
-		$this->email->subject('Hợp tác xã Tiên Phong thông báo !!');
+		$this->email->subject('Thiên Định Tuệ thông báo !!');
 
 		$body = $this->load->view('frontend/modules/email',$mydata,TRUE);
 		$this->email->message($body);
@@ -89,6 +89,10 @@ class Lienhe extends CI_Controller {
 		echo json_encode( $mydata );
 	}
 
-
+	public function gioithieu()
+	{
+		$this->data['title']="Giới thiệu";
+		$this->data['view']='gioithieu';
+		$this->load->view('frontend/layout',$this->data);
+	}
 }
-

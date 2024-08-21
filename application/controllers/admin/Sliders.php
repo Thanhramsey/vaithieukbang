@@ -159,43 +159,52 @@ class Sliders extends CI_Controller {
 				}
 			}
 			$name_array = explode('#',$img);
-			if(count($name_array) >= 3){
-				$mydata['img1']=$name_array[0];
-				$mydata['img2']=$name_array[1];
-				$mydata['img3']=$name_array[2];
+			if (count($name_array) >= 3) {
+				$mydata['img1'] = $name_array[0];
+				$mydata['img2'] = $name_array[1];
+				$mydata['img3'] = $name_array[2];
+			} elseif (count($name_array) == 2) {
+				$mydata['img1'] = $name_array[0];
+				$mydata['img2'] = $name_array[1];
+			} elseif (count($name_array) == 1 && $name_array[0] != '') {
+				$mydata['img1'] = $name_array[0];
+			} else {
+				// Không có hình ảnh mới nào được tải lên, giữ nguyên hình ảnh cũ
+				$mydata['img1'] = $this->data['row']['img1'];
+				$mydata['img2'] = $this->data['row']['img2'];
+				$mydata['img3'] = $this->data['row']['img3'];
 			}
-			else if(count($name_array) == 2){
-				$mydata['img1']=$name_array[0];
-				$mydata['img2']=$name_array[1];
-			}else{
-				$mydata['img1']=$name_array[0];
-			}
-			$this->load->library('upload', $config);
-			if($this->upload->do_upload('img')){
+			
+			if ($this->upload->do_upload('img')) {
 				$data = $this->upload->data();
-				$mydata['img']=$data['file_name'];
+				$mydata['img'] = $data['file_name'];
+			} else {
+				// Nếu không có hình ảnh mới nào được tải lên, giữ nguyên hình ảnh cũ
+				$mydata['img'] = $this->data['row']['img'];
 			}
-			$this->load->helper('file');
+			
 			$this->Msliders->slider_update($mydata, $id);
-			$filename= $this->data['row']['img'];
-			$filename1= $this->data['row']['img1'];
-			$filename2= $this->data['row']['img2'];
-			$filename3= $this->data['row']['img3'];
-			if(!empty($filename1)) {
-				unlink("public/assets/images/$filename1");
+			
+			// Kiểm tra xem có hình ảnh mới nào được tải lên hay không
+			if (count($name_array) >= 1 && !empty($name_array[0])) {
+				if (!empty($filename1)) {
+					unlink("public/assets/images/$filename1");
+				}
+				if (!empty($filename2)) {
+					unlink("public/assets/images/$filename2");
+				}
+				if (!empty($filename3)) {
+					unlink("public/assets/images/$filename3");
+				}
 			}
-			if(!empty($filename2)) {
-				unlink("public/assets/images/$filename2");
-			}
-			if(!empty($filename3)) {
-				unlink("public/assets/images/$filename3");
-			}
-			if(!empty($filename) && !empty($mydata['img'])) {
+			
+			if (!empty($filename) && !empty($mydata['img'])) {
 				unlink("public/assets/images/$filename");
 			}
+			
 			$message = "Cập nhật sản phẩm thành công";
 			$this->session->set_flashdata('success', $message);
-			redirect('admin/sliders/','refresh');
+			redirect('admin/sliders/', 'refresh');
 		}
 		$this->data['view']='update';
 		$this->data['title']='Cập nhật sliders';

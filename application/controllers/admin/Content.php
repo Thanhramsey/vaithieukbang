@@ -44,7 +44,7 @@ class Content extends CI_Controller {
 				'title' =>$_POST['name'],
 				'alias' =>$string=$this->alias->str_alias($_POST['name']),
 				'fulltext'=>$_POST['fulltext'],
-				'introtext'=>'',
+				'introtext'=>$_POST['introtext'],
 				'created'=>$today,
 				'created_by'=>$this->session->userdata('id'),
 				'modified'=>$today,
@@ -100,7 +100,7 @@ class Content extends CI_Controller {
 				'status'=>$_POST['status']
 			);
 			$config['upload_path']= './public/images/posts/';
-            $config['allowed_types']= 'gif|jpg|png';
+            $config['allowed_types']= 'gif|jpg|png|jpeg';
             $config['max_size']= 2000;
             $this->load->library('upload', $config);
             if ( $this->upload->do_upload('img'))

@@ -16,7 +16,7 @@ class Tintuc extends CI_Controller {
         $aurl= explode('/',uri_string());
 		$catlink=$aurl[0];
 		$this->load->library('phantrang');
-		$limit=3;
+		$limit=9;
 		$current=$this->phantrang->PageCurrent();
 		$first=$this->phantrang->PageFirst($limit, $current);
 		$total=$this->Mcontent->content_count();
@@ -61,5 +61,21 @@ class Tintuc extends CI_Controller {
 		// $this->data['title']=$row['title'];
 		$this->data['view']='detail';
 		$this->load->view('frontend/components/tintuc/detailsp',$this->data);
+	}
+
+
+	public function gioithieu()
+	{
+		$this->data['title']="Giới thiệu";
+		$this->data['view']='gioithieu';
+		$this->load->view('frontend/layout',$this->data);
+	}
+
+
+	public function thuvien()
+	{
+		$this->data['title']="Hình ảnh";
+		$this->data['view']='thuvien';
+		$this->load->view('frontend/layout',$this->data);
 	}
 }
