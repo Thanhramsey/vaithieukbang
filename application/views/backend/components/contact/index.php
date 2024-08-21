@@ -6,11 +6,16 @@
 			<a class="btn btn-primary btn-sm" href="<?php echo base_url()?>admin/contact/recyclebin" role="button">
 				<span class="glyphicon glyphicon-trash"></span> Thùng rác(<?php $total=$this->Mcontact->contact_trash_count(); echo $total; ?>)
 			</a>
+
+			<a class="btn btn-success btn-sm" href="<?= base_url('export-excel') ?>" role="button">
+				<span class="glyphicon glyphicon-circle-arrow-down"></span> Tải Excel
+			</a>	
 		</div>
 	</section>
 	<!-- Main content -->
 	<section class="content">
 		<div class="row">
+		
 			<div class="col-md-12">
 				<div class="box" id="view">
 					<!-- /.box-header -->
@@ -36,10 +41,11 @@
 									<thead>
 										<tr>
 											<th class="text-center" style="width:20px">ID</th>
-											<th class="text-center">Tên</th>
 											<th class="text-center">Ngày gửi</th>
+											<th class="text-center">Tên</th>											
+											<th class="text-center">Số điện thoại</th>
 											<th class="text-center">Địa chỉ mail</th>
-											<th class="text-center">Tiêu đề</th>											
+											<th class="text-center">Nội dung</th>											
 											<th class="text-center" style="width:90px">Trạng thái</th>
 											
 											<th class="text-center" colspan="2">Thao tác</th>
@@ -47,12 +53,13 @@
 									</thead>
 									<tbody>
 										<?php foreach ($list as $row):?>
-											<tr>
+											<tr>												
 												<td class="text-center"><?php echo $row['id'] ?></td>
-												<td class="text-center"><?php echo $row['fullname']?></td>
 												<td class="text-center"><?php echo $row['created_at'] ?></td>
+												<td class="text-center"><?php echo $row['fullname']?></td>
+												<td class="text-center"><?php echo $row['phone']?></td>
 												<td class="text-center"><?php echo $row['email'] ?></td>
-												<td class="text-center"><?php echo $row['title'] ?></td>
+												<td class="text-center"><?php echo $row['content'] ?></td>
 
 												<td class="text-center">
 													<a href="<?php echo base_url() ?>admin/contact/status/<?php echo $row['id'] ?>">

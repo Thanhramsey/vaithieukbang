@@ -13,6 +13,19 @@
 .main-font {   font-family: 'Baloo Bhai', cursive;}
 
 
+.contact-us label, .contact-us h1{
+    font-family: 'Baloo Bhai', sans-serif;
+}
+
+.contact-us .form-control {
+    color: #000000 !important;
+}
+
+.contact-us input::placeholder {
+    color: #888888; /* Màu của placeholder */
+    opacity: 1; /* Độ mờ của placeholder */
+}
+
 .gioi-thieu p, .gioi-thieu h2 {
     font-family: 'Baloo Bhai', sans-serif;
 }

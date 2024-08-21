@@ -67,7 +67,7 @@
                             <a class="nav-link " href="<?php echo  base_url()."sanpham"; ?>">Sản phẩm</a>
                             <a class="nav-link " href="<?php echo  base_url()."tin-tuc"; ?>">Tin tức</a>
 <a class="nav-link " href="<?php echo  base_url()."thuvien"; ?>">Hình ảnh</a>
-                            <a class="nav-link scroll" href="#contactus">Liên hệ</a>
+                            <a class="nav-link"  href="<?php echo  base_url()."lienhe"; ?>">Liên hệ</a>
                             <!-- <a class="nav-link scroll" href="#reservation">Reservation</a> -->
                         </div>
                         <div> <span class="open_search"><i class="fas fa-search"></i> </span></div>
@@ -123,7 +123,7 @@
                                 <a class="nav-link  " href="<?php echo  base_url()."tin-tuc"; ?>">Tin tức</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link  scroll" href="#contactus">Liên hệ</a>
+                                <a class="nav-link " href="<?php echo  base_url()."lienhe"; ?>">Liên hệ</a>
                             </li>
                             <!-- <li class="nav-item">
                     <a class="nav-link  scroll" href="#reservation">Reservation</a>
@@ -185,8 +185,8 @@
 
             <div class="container">
                 <div class="row pb-0">
-                    <div class="col-md-6">
-                        <iframe
+                <div class="col-md-6" style ="align-content: center;">
+                <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247803.84326507727!2d107.80477634776497!3d13.96247158169519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x316c1f82022f81a3%3A0x2234918a6e4ab03a!2sPleiku%2C%20Gia%20Lai%2C%20Vietnam!5e0!3m2!1sen!2s!4v1723307582780!5m2!1sen!2s"
                             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -202,19 +202,28 @@
                                         chúng tôi sẽ liên lạc lại với bạn sớm nhất.</h6>
                                 </div>
                                 <div class="col-md-12 mb-3">
+                                    <label for="name">Tên</label>
                                     <input class="form-control m-mb-20" type="text" placeholder="Tên" required=""
                                         id="name" name="userName">
                                 </div>
                                 <div class="col-md-12 mb-3">
+                                    <label for="cccd">Số CCCD</label>
+                                    <input class="form-control m-mb-20" type="text" placeholder="Số cccd"
+                                        id="cccd" name="cccd">
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="email">Email</label>
                                     <input class="form-control m-mb-20" type="email" placeholder="Email" required=""
                                         id="email" name="userEmail">
                                 </div>
                                 <div class="col-md-12 mb-3">
+                                    <label for="phone">Số điện thoại</label>
                                     <input class="form-control m-mb-20" type="text" placeholder="Số điện thoại"
                                         required="" id="phone" name="phone">
                                 </div>
 
                                 <div class="col-md-12 mb-3">
+                                    <label for="description">Nội dung</label>
                                     <textarea class="form-control" placeholder="Chi tiết" id="description"
                                         name="description"></textarea>
                                 </div>
@@ -284,16 +293,14 @@
         var name = $("#name").val();
         var email = $("#email").val();
         var phone = $("#phone").val();
+        var cccd = $("#cccd").val();
         var description = $("#description").val();
         $(".contact_btn_1 i").removeClass('d-none');
         var validate = false;
-        if (name === "") {
-            $("#name").focus();
-        } else if (phone == "") {
-            $("#phone").focus();
-        } else if (description == "") {
-            $("#description").focus();
-        } else {
+        if (name == "" || phone =="") {
+            $(".contact_btn_1 i").addClass('d-none');
+            alert("Vui lòng nhập Tên & Số điện thoại")
+        }else {
             validate = true;
         }
         if (validate) {
@@ -305,6 +312,7 @@
                     name: name,
                     phone: phone,
                     email: email,
+                    cccd: cccd,
                     description: description
                 },
                 success: function(data) {
@@ -313,12 +321,18 @@
                     $("#name").val("");
                     $("#phone").val("");
                     $("#email").val("");
+                    $("#cccd").val("");
                     $("#description").val("");
                     $(".contact_btn_1 i").addClass('d-none');
                     setTimeout(function() {
                         $(".text-success").hide();
                     }, 3000);
-                }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    // Xử lý lỗi HTTP (ví dụ: 404, 500)
+                    $(".contact_btn_1 i").addClass('d-none');
+                    alert("Lỗi: " + textStatus + " - " + errorThrown);
+                }, 
             });
         }
     }

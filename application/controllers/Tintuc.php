@@ -78,4 +78,11 @@ class Tintuc extends CI_Controller {
 		$this->data['view']='thuvien';
 		$this->load->view('frontend/layout',$this->data);
 	}
+
+	public function lienhe()
+	{
+		$this->data['title']="Liên hệ";
+		$this->data['view']='lienhe';
+		$this->load->view('frontend/layout',$this->data);
+	}
 }

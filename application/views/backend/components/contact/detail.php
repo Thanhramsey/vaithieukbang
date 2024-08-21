@@ -31,17 +31,17 @@
 									
 								</div>
 								<div class="form-group">
-									<label>Email <span class = "maudo"></span></label>
-									<output type="text" class="form-control" name="SDT" style="width:100%"><?php echo $row['email'] ?></output>
-									
-								</div>
-								<div class="form-group">
-									<label>Tiêu đề</label>
-									<output type="text" class="form-control" name="SDT" style="width:100%"><?php echo $row['title'] ?></output>
+									<label>Số cccd</label>
+									<output type="text" class="form-control" name="SDT" style="width:100%"><?php echo $row['cccd'] ?></output>
 
 								</div>
 								<div class="form-group">
-									<label>Nội dung mail<span class = "maudo"></span></label>
+									<label>Email <span class = "maudo"></span></label>
+									<output type="text" class="form-control" name="SDT" style="width:100%"><?php echo $row['email'] ?></output>
+							
+								</div>
+								<div class="form-group">
+									<label>Nội dung<span class = "maudo"></span></label>
 									<textarea rows="10" cols="20" name="content" style="width:100% height:100%"  id="content" class="form-control"><?php echo $row['content'] ?></textarea>
       								
 								</div>

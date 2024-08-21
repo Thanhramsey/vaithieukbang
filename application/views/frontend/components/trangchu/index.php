@@ -20,7 +20,7 @@
                      <a class="nav-link " href="<?php echo  base_url()."sanpham"; ?>">Sản phẩm</a>
                      <a class="nav-link " href="<?php echo  base_url()."tin-tuc"; ?>">Tin tức</a>
                      <a class="nav-link " href="<?php echo  base_url()."thuvien"; ?>">Hình ảnh</a>
-                     <a class="nav-link scroll" href="#contactus">Liên hệ</a>
+                     <a class="nav-link"  href="<?php echo  base_url()."lienhe"; ?>">Liên hệ</a>
                      <!-- <a class="nav-link scroll" href="#reservation">Reservation</a> -->
                  </div>
                  <div> <span class="open_search"><i class="fas fa-search"></i> </span></div>
@@ -749,8 +749,7 @@
                          <div class="overlay">
                              <a href="<?php echo base_url() ?>/public/restaurant/img/portfolio-1.jpg"
                                  class="text-center" data-fancybox="images">
-                                 <div class="search-icon"><i class="fa fa-search"></i> </div>
-                                 <h4 class="">Sản phẩm 1</h4>
+                                 <div class="search-icon"><i class="fa fa-image"></i> </div>
                              </a>
                          </div>
                      </li>
@@ -759,8 +758,7 @@
                          <div class="overlay">
                              <a href="<?php echo base_url() ?>/public/restaurant/img/portfolio-2.jpg"
                                  class="text-center" data-fancybox="images">
-                                 <div class="search-icon"><i class="fa fa-search"></i> </div>
-                                 <h4 class="">Sản phẩm 2</h4>
+                                 <div class="search-icon"><i class="fa fa-image"></i> </div>
                              </a>
                          </div>
                      </li>
@@ -769,8 +767,7 @@
                          <div class="overlay">
                              <a href="<?php echo base_url() ?>/public/restaurant/img/portfolio-3.jpg"
                                  class="text-center" data-fancybox="images">
-                                 <div class="search-icon"><i class="fa fa-search"></i> </div>
-                                 <h4 class="">Sản phẩm 3</h4>
+                                 <div class="search-icon"><i class="fa fa-image"></i> </div>
                              </a>
                          </div>
                      </li>
@@ -779,8 +776,7 @@
                          <div class="overlay">
                              <a href="<?php echo base_url() ?>/public/restaurant/img/portfolio-4.jpg"
                                  class="text-center" data-fancybox="images">
-                                 <div class="search-icon"><i class="fa fa-search"></i> </div>
-                                 <h4 class="">Sản phẩm 4</h4>
+                                 <div class="search-icon"><i class="fa fa-image"></i> </div>
                              </a>
                          </div>
                      </li>
@@ -790,8 +786,7 @@
                          <div class="overlay">
                              <a href="<?php echo base_url() ?>/public/restaurant/img/portfolio-5.jpg"
                                  class="text-center" data-fancybox="images">
-                                 <div class="search-icon"><i class="fa fa-search"></i> </div>
-                                 <h4 class="">Sản phẩm 5</h4>
+                                 <div class="search-icon"><i class="fa fa-image"></i> </div>
                              </a>
                          </div>
                      </li>
@@ -801,11 +796,22 @@
                          <div class="overlay">
                              <a href="<?php echo base_url() ?>/public/restaurant/img/portfolio-6.jpg"
                                  class="text-center" data-fancybox="images">
-                                 <div class="search-icon"><i class="fa fa-search"></i> </div>
-                                 <h4 class="">Sản phẩm 6</h4>
+                                 <div class="search-icon"><i class="fa fa-image"></i> </div>
                              </a>
                          </div>
                      </li>
+                     <?php for ($i = 7; $i <= 20; $i++): ?>
+                    <li class="items clinical surgery">
+                        <img src="<?php echo base_url() ?>/public/restaurant/img/portfolio-<?php echo $i; ?>.jpg" alt="img">
+                        <div class="overlay">
+                            <a href="<?php echo base_url() ?>/public/restaurant/img/portfolio-<?php echo $i; ?>.jpg"
+                            class="text-center" data-fancybox="images">
+                                <div class="search-icon"><i class="fa fa-image"></i></div>
+                            </a>
+                        </div>
+                    </li>
+                    <?php endfor; ?>
+
 
                  </ul>
              </div>

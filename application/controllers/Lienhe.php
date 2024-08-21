@@ -47,45 +47,49 @@ class Lienhe extends CI_Controller {
 		$name=$_POST['name'];
 		$email=$_POST['email'];
 		$phone=$_POST['phone'];
+		$cccd=$_POST['cccd'];
 		$content=$_POST['description'];
 		$mydata= array(
 			'fullname'=>$name,
 			'email'=>$email,
 			'phone'=>$phone,
 			'title'=>$name,
+			'cccd'=>$cccd,
 			'content'=> $content,
 			'created_at'=> $today
 				);
 		$this->Mcontact->contact_insert($mydata);
 
 
-		$config_data = $this->Mconfig->get_config();
-		// echo "<pre>---In ra---\n".print_r($config_data)."</pre>";
-		$this->load->library('email');
-		$this->load->library('parser');
-		$this->email->clear();
-		$config['protocol']    = 'smtp';
-		$config['smtp_host']    = 'ssl://smtp.gmail.com';
-		$config['smtp_port']    = '465';
-		$config['smtp_timeout'] = '7';
-		$config['smtp_user']    = $config_data['mail_smtp'];
-		$config['smtp_pass']    = $config_data['mail_smtp_password'];
-		$config['charset']    = 'utf-8';
-		$config['newline']    = "\r\n";
-		$config['wordwrap'] = TRUE;
-		$config['mailtype'] = 'html';
-		$config['validation'] = TRUE;
-		$this->email->initialize($config);
+		// $config_data = $this->Mconfig->get_config();
+		// // echo "<pre>---In ra---\n".print_r($config_data)."</pre>";
+		// $this->load->library('email');
+		// $this->load->library('parser');
+		// $this->email->clear();
+		// $config['protocol']    = 'smtp';
+		// $config['smtp_host']    = 'ssl://smtp.gmail.com';
+		// $config['smtp_port']    = '465';
+		// $config['smtp_timeout'] = '7';
+		// $config['smtp_user']    = $config_data['mail_smtp'];
+		// $config['smtp_pass']    = $config_data['mail_smtp_password'];
+		// $config['charset']    = 'utf-8';
+		// $config['newline']    = "\r\n";
+		// $config['wordwrap'] = TRUE;
+		// $config['mailtype'] = 'html';
+		// $config['validation'] = TRUE;
 
-		$email = $config_data['mail_noreply'];
 
-		$this->email->from($config_data['mail_smtp'], 'Thiên Định Tuệ ');
-		$this->email->to($email);
-		$this->email->subject('Thiên Định Tuệ thông báo !!');
+		// $this->email->initialize($config);
 
-		$body = $this->load->view('frontend/modules/email',$mydata,TRUE);
-		$this->email->message($body);
-		$this->email->send();
+		// $email = $config_data['mail_noreply'];
+
+		// $this->email->from($config_data['mail_smtp'], 'Thiên Định Tuệ ');
+		// $this->email->to($email);
+		// $this->email->subject('Thiên Định Tuệ thông báo !!');
+
+		// $body = $this->load->view('frontend/modules/email',$mydata,TRUE);
+		// $this->email->message($body);
+		// $this->email->send();
 		echo json_encode( $mydata );
 	}
 

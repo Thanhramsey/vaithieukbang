@@ -38,11 +38,11 @@
 
     <!--Preloader-->
 
-    <div class="loader" id="loader-fade">
+    <!-- <div class="loader" id="loader-fade">
         <div class="loader-wrapper">
             <img src="<?php echo base_url() ?>/public/restaurant/img/loader.gif" alt="image">
         </div>
-    </div>
+    </div> -->
     <!--End Preloader-->
 
 

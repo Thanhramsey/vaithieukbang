@@ -67,7 +67,7 @@
                         <a class="nav-link " href="<?php echo  base_url()."gioithieu"; ?>">Thông tin</a>
                         <a class="nav-link scroll" href="#ourmenu">Sản phẩm</a>
                         <a class="nav-link scroll" href="#ourblog">Tin tức</a>
-                        <a class="nav-link scroll" href="#contactus">Liên hệ</a>
+                        <a class="nav-link"  href="<?php echo  base_url()."lienhe"; ?>">Liên hệ</a>
                         <!-- <a class="nav-link scroll" href="#reservation">Reservation</a> -->
                     </div>
                     <div> <span class="open_search"><i class="fas fa-search"></i> </span></div>

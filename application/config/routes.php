@@ -16,6 +16,10 @@ $route['ttsanpham/(:any)'] = 'tintuc/detailsp';
 $route['gioithieu'] = 'tintuc/gioithieu';
 
 $route['thuvien'] = 'tintuc/thuvien';
+$route['lienhe'] = 'tintuc/lienhe';
+
+$route['export-excel'] = 'admin/contact/exportExcel';
+
 
 
 
